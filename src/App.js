@@ -35,7 +35,9 @@ const  App=()=> {
   ];
 const [exp,SetUserInput]=useState(expenses)
   const addExpenseHandler=expense=>{
-    SetUserInput( [...exp,expense]);
+    SetUserInput(previousExpenses=>{
+      return [expense, ...previousExpenses];
+    });
 }
  /* return React.createElement('div', {},
    React.createElement('h2', {}, "Let's get starte"),
